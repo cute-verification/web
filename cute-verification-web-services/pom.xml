@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>io.github.gdrfgdrf.cuteverification</groupId>
+        <artifactId>web-parent</artifactId>
+        <version>0.0.1</version>
+    </parent>
+
+    <artifactId>web-services</artifactId>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.github.gdrfgdrf.cuteverification</groupId>
+            <artifactId>web-pojo</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.gdrfgdrf.cuteverification</groupId>
+            <artifactId>web-commons</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.gdrfgdrf.cuteverification</groupId>
+            <artifactId>web-mappers</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.gdrfgdrf.cuteverification</groupId>
+            <artifactId>web-holders</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
