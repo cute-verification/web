@@ -33,6 +33,7 @@ data class IdentificationSource(
 
     override var ip: String? = null,
     override var time: Instant? = null,
+    var platform: IdentificationPlatforms? = null,
 
     @JsonProperty("identification-id")
     @TableField("identification_id")
