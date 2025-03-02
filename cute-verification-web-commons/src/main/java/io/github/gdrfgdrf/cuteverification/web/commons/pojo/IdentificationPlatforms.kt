@@ -1,4 +1,4 @@
-package io.github.gdrfgdrf.cuteverification.web.pojo.identification
+package io.github.gdrfgdrf.cuteverification.web.commons.pojo
 
 enum class IdentificationPlatforms {
     WINDOWS,

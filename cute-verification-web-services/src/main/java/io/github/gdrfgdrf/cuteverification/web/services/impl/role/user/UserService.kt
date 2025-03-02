@@ -73,6 +73,7 @@ open class UserService : ServiceImpl<UserMapper, User>(), IUserService {
     override fun login(userLoginDto: UserLoginDTO): User {
         val username = userLoginDto.username
         val code = userLoginDto.code
+        val platform = userLoginDto.platform
         val ip = userLoginDto.ip
 
         val user: User?
@@ -95,7 +96,7 @@ open class UserService : ServiceImpl<UserMapper, User>(), IUserService {
             throw IllegalArgumentException("user $username's id is null")
         }
 
-        identificationService.save(code, ip, user.id!!)
+        identificationService.save(code, platform, ip, user.id!!)
 
         return user
     }

@@ -13,6 +13,7 @@ import com.github.dreamyoung.mprelation.OneToOne
 import io.github.gdrfgdrf.cuteverification.abstracts.server.identification.IIdentification
 import io.github.gdrfgdrf.cuteverification.abstracts.server.identification.IIdentificationSource
 import io.github.gdrfgdrf.cuteverification.abstracts.server.role.user.IUser
+import io.github.gdrfgdrf.cuteverification.web.commons.pojo.IdentificationPlatforms
 import io.github.gdrfgdrf.cuteverification.web.pojo.role.user.User
 import java.time.Instant
 

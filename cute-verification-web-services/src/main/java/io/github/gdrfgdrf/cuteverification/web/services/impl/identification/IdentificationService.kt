@@ -3,6 +3,7 @@ package io.github.gdrfgdrf.cuteverification.web.services.impl.identification
 import com.github.dreamyoung.mprelation.ServiceImpl
 import com.github.pagehelper.PageHelper
 import com.github.pagehelper.PageInfo
+import io.github.gdrfgdrf.cuteverification.web.commons.pojo.IdentificationPlatforms
 import io.github.gdrfgdrf.cuteverification.web.mappers.identification.IdentificationMapper
 import io.github.gdrfgdrf.cuteverification.web.pojo.identification.Identification
 import io.github.gdrfgdrf.cuteverification.web.pojo.identification.IdentificationSource
@@ -94,7 +95,7 @@ open class IdentificationService : ServiceImpl<IdentificationMapper, Identificat
     }
 
     @Transactional
-    override fun save(code: String, ip: String, userId: String) {
+    override fun save(code: String, platform: IdentificationPlatforms, ip: String, userId: String) {
         val identification: Identification?
 
         if (!existsByCode(code)) {
@@ -114,6 +115,7 @@ open class IdentificationService : ServiceImpl<IdentificationMapper, Identificat
         source.userId = userId
         source.ip = ip
         source.time = Instant.now()
+        source.platform = platform
         source.identificationId = identification.id
 
         sourceService.save(source)
