@@ -1,5 +1,7 @@
-package io.github.gdrfgdrf.cuteverification.web.commons.pojo
+package io.github.gdrfgdrf.cuteverification.web.commons.pojo.websocket
 
+import io.github.gdrfgdrf.cuteverification.web.commons.json.Jsons
+import org.springframework.web.socket.TextMessage
 import org.springframework.web.socket.WebSocketSession
 
 class Session(
@@ -8,7 +10,14 @@ class Session(
     val token: String,
     val socketSession: WebSocketSession
 ) {
-    fun close() {
+
+    fun tokenInvalid() {
+        val message = WsMessage()
+        message.type = WsMessageTypes.TOKEN_INVALID
+
+        val content = Jsons.write(message)
+        socketSession.sendMessage(TextMessage(content))
+
         socketSession.close()
     }
 

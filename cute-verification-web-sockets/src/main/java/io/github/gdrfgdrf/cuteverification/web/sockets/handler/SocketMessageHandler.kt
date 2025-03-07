@@ -1,8 +1,7 @@
 package io.github.gdrfgdrf.cuteverification.web.sockets.handler
 
-import io.github.gdrfgdrf.cuteverification.web.commons.pojo.Session
+import io.github.gdrfgdrf.cuteverification.web.commons.pojo.websocket.Session
 import io.github.gdrfgdrf.cuteverification.web.interfaces.ISessionManager
-import io.github.gdrfgdrf.cuteverification.web.sockets.impl.SessionManager
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 import org.springframework.web.socket.CloseStatus
@@ -22,7 +21,7 @@ class SocketMessageHandler : TextWebSocketHandler() {
         val username = attributes["username"].toString()
         val token = attributes["token"].toString()
 
-        val session = Session.Companion.of(
+        val session = Session.of(
             id,
             username,
             token,
@@ -32,18 +31,19 @@ class SocketMessageHandler : TextWebSocketHandler() {
     }
 
     override fun handleMessage(webSocketSession: WebSocketSession, message: WebSocketMessage<*>) {
-        val attributes = webSocketSession.attributes
-        val id = attributes["id"].toString()
-        val session = sessionManager.get(id)
-        if (session == null) {
-            webSocketSession.close()
-            return
-        }
-        val available = sessionManager.auth(session)
-        if (!available) {
-            session.close()
-            return
-        }
+//        val attributes = webSocketSession.attributes
+//        val id = attributes["id"].toString()
+//        val session = sessionManager.get(id)
+//        if (session == null) {
+//            webSocketSession.close()
+//            return
+//        }
+//        val available = sessionManager.auth(session)
+//        if (!available) {
+//            session.close()
+//            return
+//        }
+
 
         super.handleMessage(webSocketSession, message)
     }
@@ -51,7 +51,7 @@ class SocketMessageHandler : TextWebSocketHandler() {
     override fun afterConnectionClosed(webSocketSession: WebSocketSession, status: CloseStatus) {
         val attributes = webSocketSession.attributes
         val id = attributes["id"].toString()
-        sessionManager.remove(id)
+        sessionManager.kick(id)
     }
 
     override fun handleTextMessage(session: WebSocketSession, message: TextMessage) {

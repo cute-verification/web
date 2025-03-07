@@ -52,7 +52,7 @@ class JwtAuthenticationSuccessHandler : AuthenticationSuccessHandler {
 
         SecurityContextHolder.getContext().authentication = authentication
 
-        sessionManager.remove(id)
+        sessionManager.kick(id)
 
         recordService.administratorLogin()
     }
