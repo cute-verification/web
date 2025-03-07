@@ -1,6 +1,6 @@
 package io.github.gdrfgdrf.cuteverification.web.services.impl.redis
 
-import io.github.gdrfgdrf.cuteverification.web.services.redis.IRedisService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRedisService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.stereotype.Service

@@ -1,4 +1,4 @@
-package io.github.gdrfgdrf.cuteverification.web.services.redis
+package io.github.gdrfgdrf.cuteverification.web.interfaces
 
 import java.time.Duration
 

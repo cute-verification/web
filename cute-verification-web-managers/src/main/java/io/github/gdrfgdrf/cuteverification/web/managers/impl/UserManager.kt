@@ -1,9 +1,9 @@
 package io.github.gdrfgdrf.cuteverification.web.managers.impl
 
 import io.github.gdrfgdrf.cuteverification.abstracts.server.role.user.IUser
-import io.github.gdrfgdrf.cuteverification.web.managers.IUserManager
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IUserManager
 import io.github.gdrfgdrf.cuteverification.web.pojo.role.user.User
-import io.github.gdrfgdrf.cuteverification.web.services.role.user.IUserService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IUserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 import java.time.Instant

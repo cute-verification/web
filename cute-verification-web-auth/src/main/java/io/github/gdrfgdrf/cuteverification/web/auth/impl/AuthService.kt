@@ -1,8 +1,8 @@
 package io.github.gdrfgdrf.cuteverification.web.auth.impl
 
-import io.github.gdrfgdrf.cuteverification.web.auth.IAuthService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IAuthService
 import io.github.gdrfgdrf.cuteverification.web.auth.JwtUser
-import io.github.gdrfgdrf.cuteverification.web.services.role.admin.IAdministratorService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IAdministratorService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UsernameNotFoundException

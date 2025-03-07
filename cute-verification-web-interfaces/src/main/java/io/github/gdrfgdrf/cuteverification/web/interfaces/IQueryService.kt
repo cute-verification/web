@@ -1,4 +1,4 @@
-package io.github.gdrfgdrf.cuteverification.web.services.query
+package io.github.gdrfgdrf.cuteverification.web.interfaces
 
 import io.github.gdrfgdrf.cuteverification.web.pojo.identification.Identification
 import io.github.gdrfgdrf.cuteverification.web.pojo.identification.IdentificationSource

@@ -1,8 +1,6 @@
-package io.github.gdrfgdrf.cuteverification.web.services.role.admin
+package io.github.gdrfgdrf.cuteverification.web.interfaces
 
 import com.github.dreamyoung.mprelation.IService
-import io.github.gdrfgdrf.cuteverification.abstracts.server.role.admin.IAdministrator
-import io.github.gdrfgdrf.cuteverification.web.commons.result.ApiResult
 import io.github.gdrfgdrf.cuteverification.web.pojo.role.admin.Administrator
 
 interface IAdministratorService : IService<Administrator> {

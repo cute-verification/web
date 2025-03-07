@@ -7,17 +7,14 @@ import io.github.gdrfgdrf.cuteverification.web.commons.pojo.UserLoginDTO
 import io.github.gdrfgdrf.cuteverification.web.mappers.role.user.UserMapper
 import io.github.gdrfgdrf.cuteverification.web.pojo.restriction.Restriction
 import io.github.gdrfgdrf.cuteverification.web.pojo.role.user.User
-import io.github.gdrfgdrf.cuteverification.web.services.identification.IIdentificationService
-import io.github.gdrfgdrf.cuteverification.web.services.query.IQueryService
-import io.github.gdrfgdrf.cuteverification.web.services.restriction.IRestrictionService
-import io.github.gdrfgdrf.cuteverification.web.services.role.user.IUserService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IIdentificationService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IQueryService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRestrictionService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IUserService
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.context.annotation.Lazy
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import org.springframework.util.StopWatch
 import java.time.Instant
-import java.util.concurrent.TimeUnit
 
 @Service
 open class UserService : ServiceImpl<UserMapper, User>(), IUserService {

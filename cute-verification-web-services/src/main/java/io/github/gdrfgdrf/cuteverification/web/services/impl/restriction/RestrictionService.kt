@@ -6,11 +6,10 @@ import com.github.pagehelper.PageInfo
 import io.github.gdrfgdrf.cuteverification.web.commons.pojo.RestrictionCreationDTO
 import io.github.gdrfgdrf.cuteverification.web.mappers.restriction.RestrictionMapper
 import io.github.gdrfgdrf.cuteverification.web.pojo.restriction.Restriction
-import io.github.gdrfgdrf.cuteverification.web.services.record.IRecordService
-import io.github.gdrfgdrf.cuteverification.web.services.redis.IRedisService
-import io.github.gdrfgdrf.cuteverification.web.services.restriction.IRestrictionService
-import io.github.gdrfgdrf.cuteverification.web.services.restriction.IRestrictionTargetService
-import io.github.gdrfgdrf.cuteverification.web.services.role.admin.IAdministratorService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRecordService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRestrictionService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRestrictionTargetService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IAdministratorService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Lazy
 import org.springframework.security.core.context.SecurityContextHolder

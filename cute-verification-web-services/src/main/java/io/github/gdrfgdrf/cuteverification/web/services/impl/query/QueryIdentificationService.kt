@@ -1,17 +1,13 @@
 package io.github.gdrfgdrf.cuteverification.web.services.impl.query
 
-import io.github.gdrfgdrf.cuteverification.web.mappers.identification.IdentificationMapper
 import io.github.gdrfgdrf.cuteverification.web.pojo.restriction.Restriction
 import io.github.gdrfgdrf.cuteverification.web.pojo.restriction.RestrictionTarget
-import io.github.gdrfgdrf.cuteverification.web.services.identification.IIdentificationService
-import io.github.gdrfgdrf.cuteverification.web.services.query.IQueryService
-import io.github.gdrfgdrf.cuteverification.web.services.restriction.IRestrictionService
-import io.github.gdrfgdrf.cuteverification.web.services.restriction.IRestrictionTargetService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IQueryService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRestrictionService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRestrictionTargetService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import org.springframework.util.StopWatch
-import java.util.concurrent.TimeUnit
 
 @Service
 open class QueryIdentificationService : IQueryService.IIdentificationService {

@@ -1,9 +1,9 @@
 package io.github.gdrfgdrf.cuteverification.web.managers.impl
 
 import io.github.gdrfgdrf.cuteverification.abstracts.server.restriction.IRestriction
-import io.github.gdrfgdrf.cuteverification.web.managers.IRestrictionManager
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRestrictionManager
 import io.github.gdrfgdrf.cuteverification.web.pojo.restriction.Restriction
-import io.github.gdrfgdrf.cuteverification.web.services.restriction.IRestrictionService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRestrictionService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 

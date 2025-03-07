@@ -2,15 +2,13 @@ package io.github.gdrfgdrf.cuteverification.web.controllers.query
 
 import io.github.gdrfgdrf.cuteverification.web.commons.result.ApiResult
 import io.github.gdrfgdrf.cuteverification.web.commons.result.ApiStatus
-import io.github.gdrfgdrf.cuteverification.web.services.query.IQueryService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IQueryService
 import jakarta.websocket.server.PathParam
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.util.StopWatch
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
-import java.util.concurrent.TimeUnit
 
 @RestController
 @RequestMapping("/api/v1/query/user/{user_id}")

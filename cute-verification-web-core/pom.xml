@@ -72,6 +72,16 @@
             <groupId>io.github.gdrfgdrf.cuteverification</groupId>
             <artifactId>web-advices</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>io.github.gdrfgdrf.cuteverification</groupId>
+            <artifactId>web-sockets</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.gdrfgdrf.cuteverification</groupId>
+            <artifactId>web-interfaces</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

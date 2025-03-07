@@ -3,10 +3,10 @@ package io.github.gdrfgdrf.cuteverification.web.services.impl.query
 import io.github.gdrfgdrf.cuteverification.web.pojo.identification.IdentificationSource
 import io.github.gdrfgdrf.cuteverification.web.pojo.restriction.Restriction
 import io.github.gdrfgdrf.cuteverification.web.pojo.restriction.RestrictionTarget
-import io.github.gdrfgdrf.cuteverification.web.services.identification.IIdentificationSourceService
-import io.github.gdrfgdrf.cuteverification.web.services.query.IQueryService
-import io.github.gdrfgdrf.cuteverification.web.services.restriction.IRestrictionService
-import io.github.gdrfgdrf.cuteverification.web.services.restriction.IRestrictionTargetService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IIdentificationSourceService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IQueryService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRestrictionService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRestrictionTargetService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional

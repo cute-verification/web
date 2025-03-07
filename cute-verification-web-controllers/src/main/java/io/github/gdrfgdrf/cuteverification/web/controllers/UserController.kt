@@ -3,17 +3,14 @@ package io.github.gdrfgdrf.cuteverification.web.controllers
 import io.github.gdrfgdrf.cuteverification.web.commons.pojo.UserLoginDTO
 import io.github.gdrfgdrf.cuteverification.web.commons.result.ApiResult
 import io.github.gdrfgdrf.cuteverification.web.commons.result.ApiStatus
-import io.github.gdrfgdrf.cuteverification.web.managers.IUserManager
 import io.github.gdrfgdrf.cuteverification.web.pojo.restriction.Restriction
-import io.github.gdrfgdrf.cuteverification.web.services.role.user.IUserService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IUserService
 import jakarta.websocket.server.PathParam
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.util.StopWatch
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
-import java.util.concurrent.TimeUnit
 
 @RestController
 @RequestMapping("/api/v1/users")

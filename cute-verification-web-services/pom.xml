@@ -37,6 +37,11 @@
             <groupId>io.github.gdrfgdrf.cuteverification</groupId>
             <artifactId>web-holders</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>io.github.gdrfgdrf.cuteverification</groupId>
+            <artifactId>web-interfaces</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

@@ -2,8 +2,8 @@ package io.github.gdrfgdrf.cuteverification.web.controllers
 
 import io.github.gdrfgdrf.cuteverification.web.commons.result.ApiResult
 import io.github.gdrfgdrf.cuteverification.web.commons.result.ApiStatus
-import io.github.gdrfgdrf.cuteverification.web.services.redis.IRedisService
-import io.github.gdrfgdrf.cuteverification.web.services.role.admin.IAdministratorService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRedisService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IAdministratorService
 import jakarta.websocket.server.PathParam
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.context.SecurityContextHolder

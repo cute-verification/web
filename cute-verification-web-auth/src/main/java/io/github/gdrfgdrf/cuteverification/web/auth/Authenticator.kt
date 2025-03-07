@@ -1,9 +1,9 @@
 package io.github.gdrfgdrf.cuteverification.web.auth
 
 import io.github.gdrfgdrf.cuteverification.web.commons.jwt.Jwts
-import io.github.gdrfgdrf.cuteverification.web.services.impl.role.admin.AdministratorService
-import io.github.gdrfgdrf.cuteverification.web.services.redis.IRedisService
-import io.github.gdrfgdrf.cuteverification.web.services.role.admin.IAdministratorService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IAuthService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRedisService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IAdministratorService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 

@@ -3,7 +3,7 @@ package io.github.gdrfgdrf.cuteverification.web.controllers
 import io.github.gdrfgdrf.cuteverification.web.commons.pojo.RestrictionCreationDTO
 import io.github.gdrfgdrf.cuteverification.web.commons.result.ApiResult
 import io.github.gdrfgdrf.cuteverification.web.commons.result.ApiStatus
-import io.github.gdrfgdrf.cuteverification.web.services.restriction.IRestrictionService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRestrictionService
 import jakarta.websocket.server.PathParam
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestBody

@@ -9,7 +9,7 @@
         <version>0.0.1</version>
     </parent>
 
-    <artifactId>web-auth</artifactId>
+    <artifactId>web-sockets</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -20,17 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>io.github.gdrfgdrf.cuteverification</groupId>
-            <artifactId>web-services</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.github.gdrfgdrf.cuteverification</groupId>
-            <artifactId>web-commons</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.github.gdrfgdrf.cuteverification</groupId>
-            <artifactId>web-interfaces</artifactId>
+            <artifactId>web-auth</artifactId>
         </dependency>
     </dependencies>
 

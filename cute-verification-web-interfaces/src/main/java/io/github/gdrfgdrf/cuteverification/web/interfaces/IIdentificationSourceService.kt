@@ -1,4 +1,4 @@
-package io.github.gdrfgdrf.cuteverification.web.services.identification
+package io.github.gdrfgdrf.cuteverification.web.interfaces
 
 import com.github.dreamyoung.mprelation.IService
 import io.github.gdrfgdrf.cuteverification.web.pojo.identification.IdentificationSource

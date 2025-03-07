@@ -2,11 +2,11 @@ package io.github.gdrfgdrf.cuteverification.web.managers.impl
 
 import io.github.gdrfgdrf.cuteverification.abstracts.server.identification.IIdentification
 import io.github.gdrfgdrf.cuteverification.abstracts.server.identification.IIdentificationSource
-import io.github.gdrfgdrf.cuteverification.web.managers.IIdentificationManager
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IIdentificationManager
 import io.github.gdrfgdrf.cuteverification.web.pojo.identification.Identification
 import io.github.gdrfgdrf.cuteverification.web.pojo.identification.IdentificationSource
-import io.github.gdrfgdrf.cuteverification.web.services.identification.IIdentificationService
-import io.github.gdrfgdrf.cuteverification.web.services.identification.IIdentificationSourceService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IIdentificationService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IIdentificationSourceService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 

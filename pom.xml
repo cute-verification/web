@@ -29,6 +29,8 @@
 		<module>cute-verification-web-config</module>
 		<module>cute-verification-web-auth</module>
 		<module>cute-verification-web-advices</module>
+		<module>cute-verification-web-sockets</module>
+		<module>cute-verification-web-interfaces</module>
 	</modules>
 
 	<url/>
@@ -120,10 +122,28 @@
 				<artifactId>web-advices</artifactId>
 				<version>0.0.1</version>
 			</dependency>
+
+			<dependency>
+				<groupId>io.github.gdrfgdrf.cuteverification</groupId>
+				<artifactId>web-sockets</artifactId>
+				<version>0.0.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.github.gdrfgdrf.cuteverification</groupId>
+				<artifactId>web-interfaces</artifactId>
+				<version>0.0.1</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
 	<dependencies>
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-http</artifactId>
+			<version>5.8.36</version>
+		</dependency>
+
 		<dependency>
 			<groupId>io.github.gdrfgdrf.cuteverification</groupId>
 			<artifactId>server-abstracts</artifactId>
@@ -151,6 +171,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
 
 		<dependency>

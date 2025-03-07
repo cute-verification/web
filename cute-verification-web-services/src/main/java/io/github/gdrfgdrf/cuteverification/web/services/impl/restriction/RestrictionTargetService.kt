@@ -3,8 +3,8 @@ package io.github.gdrfgdrf.cuteverification.web.services.impl.restriction
 import com.github.dreamyoung.mprelation.ServiceImpl
 import io.github.gdrfgdrf.cuteverification.web.mappers.restriction.RestrictionTargetMapper
 import io.github.gdrfgdrf.cuteverification.web.pojo.restriction.RestrictionTarget
-import io.github.gdrfgdrf.cuteverification.web.services.identification.IIdentificationService
-import io.github.gdrfgdrf.cuteverification.web.services.restriction.IRestrictionTargetService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IIdentificationService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRestrictionTargetService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional

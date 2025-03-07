@@ -8,11 +8,10 @@ import io.github.gdrfgdrf.cuteverification.web.mappers.identification.Identifica
 import io.github.gdrfgdrf.cuteverification.web.pojo.identification.Identification
 import io.github.gdrfgdrf.cuteverification.web.pojo.identification.IdentificationSource
 import io.github.gdrfgdrf.cuteverification.web.pojo.restriction.Restriction
-import io.github.gdrfgdrf.cuteverification.web.pojo.role.user.User
-import io.github.gdrfgdrf.cuteverification.web.services.identification.IIdentificationService
-import io.github.gdrfgdrf.cuteverification.web.services.identification.IIdentificationSourceService
-import io.github.gdrfgdrf.cuteverification.web.services.query.IQueryService
-import io.github.gdrfgdrf.cuteverification.web.services.restriction.IRestrictionService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IIdentificationService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IIdentificationSourceService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IQueryService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRestrictionService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Lazy
 import org.springframework.stereotype.Service

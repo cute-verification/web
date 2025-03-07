@@ -1,9 +1,6 @@
 package io.github.gdrfgdrf.cuteverification.web.auth.spring
 
 import io.github.gdrfgdrf.cuteverification.web.auth.Authenticator
-import io.github.gdrfgdrf.cuteverification.web.auth.IAuthService
-import io.github.gdrfgdrf.cuteverification.web.commons.jwt.Jwts
-import io.github.gdrfgdrf.cuteverification.web.services.redis.IRedisService
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse

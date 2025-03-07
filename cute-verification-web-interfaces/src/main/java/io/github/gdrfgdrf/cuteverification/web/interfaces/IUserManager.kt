@@ -1,4 +1,4 @@
-package io.github.gdrfgdrf.cuteverification.web.managers
+package io.github.gdrfgdrf.cuteverification.web.interfaces
 
 import io.github.gdrfgdrf.cuteverification.abstracts.server.role.user.IUser
 

@@ -1,9 +1,8 @@
-package io.github.gdrfgdrf.cuteverification.web.services.restriction
+package io.github.gdrfgdrf.cuteverification.web.interfaces
 
 import com.github.dreamyoung.mprelation.IService
 import com.github.pagehelper.PageInfo
 import io.github.gdrfgdrf.cuteverification.web.commons.pojo.RestrictionCreationDTO
-import io.github.gdrfgdrf.cuteverification.web.pojo.record.Record
 import io.github.gdrfgdrf.cuteverification.web.pojo.restriction.Restriction
 
 interface IRestrictionService : IService<Restriction> {

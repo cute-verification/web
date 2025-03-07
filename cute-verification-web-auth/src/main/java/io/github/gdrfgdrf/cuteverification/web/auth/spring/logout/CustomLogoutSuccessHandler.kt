@@ -1,8 +1,8 @@
 package io.github.gdrfgdrf.cuteverification.web.auth.spring.logout
 
 import io.github.gdrfgdrf.cuteverification.web.commons.result.ApiStatus
-import io.github.gdrfgdrf.cuteverification.web.services.record.IRecordService
-import io.github.gdrfgdrf.cuteverification.web.services.redis.IRedisService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRecordService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IRedisService
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
 import org.springframework.beans.factory.annotation.Autowired

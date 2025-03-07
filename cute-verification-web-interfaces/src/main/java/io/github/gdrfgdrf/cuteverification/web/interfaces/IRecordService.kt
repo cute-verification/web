@@ -1,4 +1,4 @@
-package io.github.gdrfgdrf.cuteverification.web.services.record
+package io.github.gdrfgdrf.cuteverification.web.interfaces
 
 import com.github.dreamyoung.mprelation.IService
 import com.github.pagehelper.PageInfo

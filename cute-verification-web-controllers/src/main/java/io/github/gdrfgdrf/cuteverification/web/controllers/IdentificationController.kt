@@ -2,10 +2,8 @@ package io.github.gdrfgdrf.cuteverification.web.controllers
 
 import io.github.gdrfgdrf.cuteverification.web.commons.result.ApiResult
 import io.github.gdrfgdrf.cuteverification.web.commons.result.ApiStatus
-import io.github.gdrfgdrf.cuteverification.web.managers.IIdentificationManager
-import io.github.gdrfgdrf.cuteverification.web.pojo.identification.Identification
 import io.github.gdrfgdrf.cuteverification.web.pojo.restriction.Restriction
-import io.github.gdrfgdrf.cuteverification.web.services.identification.IIdentificationService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IIdentificationService
 import jakarta.websocket.server.PathParam
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestMapping

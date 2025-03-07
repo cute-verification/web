@@ -2,7 +2,7 @@ package io.github.gdrfgdrf.cuteverification.web.controllers.query
 
 import io.github.gdrfgdrf.cuteverification.web.commons.result.ApiResult
 import io.github.gdrfgdrf.cuteverification.web.commons.result.ApiStatus
-import io.github.gdrfgdrf.cuteverification.web.services.query.IQueryService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IQueryService
 import jakarta.websocket.server.PathParam
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.PathVariable
