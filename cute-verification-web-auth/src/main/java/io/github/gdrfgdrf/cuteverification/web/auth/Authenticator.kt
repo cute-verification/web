@@ -1,7 +1,9 @@
 package io.github.gdrfgdrf.cuteverification.web.auth
 
 import io.github.gdrfgdrf.cuteverification.web.commons.jwt.Jwts
+import io.github.gdrfgdrf.cuteverification.web.services.impl.role.admin.AdministratorService
 import io.github.gdrfgdrf.cuteverification.web.services.redis.IRedisService
+import io.github.gdrfgdrf.cuteverification.web.services.role.admin.IAdministratorService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
@@ -13,6 +15,8 @@ class Authenticator {
     private lateinit var authService: IAuthService
     @Autowired
     private lateinit var redisService: IRedisService
+    @Autowired
+    private lateinit var adminService: IAdministratorService
 
     fun auth(token: String): Boolean {
         val decodedJwt = jwts.verify(token) ?: return false
@@ -30,6 +34,14 @@ class Authenticator {
 
         val tokenAvailable = redisService.existsAccessTokenByName(usernameFromToken)
         return tokenAvailable
+    }
+
+    fun id(username: String): String? {
+        val administrator = adminService.findByUsername(username)
+        if (administrator == null) {
+            return null
+        }
+        return administrator.id
     }
 
     fun username(token: String): String? {
