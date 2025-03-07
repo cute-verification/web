@@ -37,11 +37,7 @@ class Authenticator {
     }
 
     fun id(username: String): String? {
-        val administrator = adminService.findByUsername(username)
-        if (administrator == null) {
-            return null
-        }
-        return administrator.id
+        return adminService.findIdByUsername(username)
     }
 
     fun username(token: String): String? {

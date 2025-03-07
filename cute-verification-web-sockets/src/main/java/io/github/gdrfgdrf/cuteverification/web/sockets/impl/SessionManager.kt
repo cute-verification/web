@@ -1,0 +1,41 @@
+package io.github.gdrfgdrf.cuteverification.web.sockets.impl
+
+import io.github.gdrfgdrf.cuteverification.web.auth.Authenticator
+import io.github.gdrfgdrf.cuteverification.web.interfaces.ISessionManager
+import io.github.gdrfgdrf.cuteverification.web.commons.pojo.Session
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Component
+import java.util.concurrent.ConcurrentHashMap
+
+@Component
+class SessionManager : ISessionManager {
+    @Autowired
+    lateinit var authenticator: Authenticator
+    private val logonSessions = ConcurrentHashMap<String, Session>()
+
+    override fun get(id: String): Session? {
+        if (!logonSessions.containsKey(id)) {
+            return null
+        }
+        return logonSessions.get(id)
+    }
+
+    override fun add(id: String, session: Session) {
+        logonSessions[id] = session
+    }
+
+    override fun remove(id: String) {
+        if (logonSessions.containsKey(id)) {
+            val session = logonSessions[id]!!
+            session.close()
+        }
+
+        logonSessions.remove(id)
+    }
+
+    override fun auth(session: Session): Boolean {
+        return authenticator.auth(session.token)
+    }
+
+
+}
