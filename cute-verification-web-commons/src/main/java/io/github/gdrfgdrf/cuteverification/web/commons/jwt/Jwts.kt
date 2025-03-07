@@ -46,12 +46,6 @@ class Jwts {
         return null
     }
 
-    fun verifyName(token: String, targetName: String): Boolean {
-        val decodedJWT = verify(token) ?: return false
-        val username = decodedJWT.subject
-        return username == targetName
-    }
-
     private fun expireAt(): Date {
         return Date(System.currentTimeMillis() + expireAfter)
     }

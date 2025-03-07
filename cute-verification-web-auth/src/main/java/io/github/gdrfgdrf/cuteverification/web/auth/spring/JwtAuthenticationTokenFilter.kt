@@ -1,5 +1,6 @@
 package io.github.gdrfgdrf.cuteverification.web.auth.spring
 
+import io.github.gdrfgdrf.cuteverification.web.auth.Authenticator
 import io.github.gdrfgdrf.cuteverification.web.auth.IAuthService
 import io.github.gdrfgdrf.cuteverification.web.commons.jwt.Jwts
 import io.github.gdrfgdrf.cuteverification.web.services.redis.IRedisService
@@ -8,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
+import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource
 import org.springframework.stereotype.Component
@@ -16,11 +18,7 @@ import org.springframework.web.filter.OncePerRequestFilter
 @Component
 class JwtAuthenticationTokenFilter : OncePerRequestFilter() {
     @Autowired
-    private lateinit var authService: IAuthService
-    @Autowired
-    private lateinit var redisService: IRedisService
-    @Autowired
-    private lateinit var jwts: Jwts
+    private lateinit var authenticator: Authenticator
 
     override fun doFilterInternal(
         request: HttpServletRequest,
@@ -38,47 +36,24 @@ class JwtAuthenticationTokenFilter : OncePerRequestFilter() {
             return
         }
 
-        val decodedJwt = jwts.verify(token)
-        if (decodedJwt == null) {
+        val available = authenticator.auth(token)
+        if (!available) {
+            filterChain.doFilter(request, response)
+            return
+        }
+        val username = authenticator.username(token)
+        if (username.isNullOrBlank()) {
             filterChain.doFilter(request, response)
             return
         }
 
-        val usernameFromToken = decodedJwt.subject
-        if (usernameFromToken.isNullOrBlank()) {
-            filterChain.doFilter(request, response)
-            return
-        }
-
-        val administrator = runCatching {
-            authService.loadUserByUsername(usernameFromToken)
-        }.getOrNull()
-        if (administrator == null) {
-            filterChain.doFilter(request, response)
-            return
-        }
-
-        val usernameFromDatabase = administrator.username
-        if (usernameFromDatabase.isNullOrBlank()) {
-            filterChain.doFilter(request, response)
-            return
-        }
-
-        val usernameFromRedis = redisService.findNameByAccessToken(token)
-        if (usernameFromRedis.isNullOrBlank()) {
-            filterChain.doFilter(request, response)
-            return
-        }
-
-        if (usernameFromToken == usernameFromDatabase && usernameFromToken == usernameFromRedis) {
-            val authentication = UsernamePasswordAuthenticationToken(
-                usernameFromDatabase,
-                null,
-                administrator.authorities
-            )
-            authentication.details = WebAuthenticationDetailsSource().buildDetails(request)
-            SecurityContextHolder.getContext().authentication = authentication
-        }
+        val authentication = UsernamePasswordAuthenticationToken(
+            username,
+            null,
+            arrayListOf<GrantedAuthority>()
+        )
+        authentication.details = WebAuthenticationDetailsSource().buildDetails(request)
+        SecurityContextHolder.getContext().authentication = authentication
 
         filterChain.doFilter(request, response)
     }
