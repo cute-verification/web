@@ -21,20 +21,4 @@ class AuthService : IAuthService {
         }
         return JwtUser(administrator.username, administrator.password)
     }
-
-    override fun authenticate(username: String, password: String): String {
-        TODO("Not yet implemented")
-    }
-
-    override fun tokenExists(id: String): Boolean {
-        TODO("Not yet implemented")
-    }
-
-    override fun expireToken(id: String, duration: Duration) {
-        TODO("Not yet implemented")
-    }
-
-    override fun removeToken(id: String) {
-        TODO("Not yet implemented")
-    }
 }
