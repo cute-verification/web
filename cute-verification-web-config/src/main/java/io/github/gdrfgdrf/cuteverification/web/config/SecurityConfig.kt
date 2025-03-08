@@ -44,11 +44,6 @@ open class SecurityConfig {
     private lateinit var authenticationTokenFilter: IJwtAuthenticationTokenFilter
 
     @Bean
-    open fun passwordEncoder(): PasswordEncoder {
-        return BCryptPasswordEncoder()
-    }
-
-    @Bean
     open fun authenticationManager(authenticationConfiguration: AuthenticationConfiguration): AuthenticationManager {
         return authenticationConfiguration.authenticationManager
     }

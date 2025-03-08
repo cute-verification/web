@@ -6,14 +6,15 @@ import io.github.gdrfgdrf.cuteverification.web.pojo.role.admin.Administrator
 import io.github.gdrfgdrf.cuteverification.web.interfaces.IRecordService
 import io.github.gdrfgdrf.cuteverification.web.interfaces.IAdministratorService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.context.annotation.Bean
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
 @Service
 open class AdministratorService : ServiceImpl<AdministratorMapper, Administrator>(), IAdministratorService {
-    @Autowired
-    private lateinit var passwordEncoder: PasswordEncoder
+    private val passwordEncoder: BCryptPasswordEncoder = BCryptPasswordEncoder()
     @Autowired
     private lateinit var recordService: IRecordService
 
