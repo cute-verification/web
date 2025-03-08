@@ -17,7 +17,9 @@ class Session(
     }
 
     fun close() {
-        socketSession.close()
+        if (socketSession.isOpen) {
+            socketSession.close()
+        }
     }
 
     companion object {
