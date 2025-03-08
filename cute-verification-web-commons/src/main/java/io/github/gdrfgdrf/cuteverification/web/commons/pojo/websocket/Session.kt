@@ -10,7 +10,6 @@ class Session(
     val token: String,
     val socketSession: WebSocketSession
 ) {
-
     fun tokenInvalid() {
         val message = WsMessage()
         message.type = WsMessageTypes.TOKEN_INVALID
@@ -18,6 +17,10 @@ class Session(
         val content = Jsons.write(message)
         socketSession.sendMessage(TextMessage(content))
 
+        socketSession.close()
+    }
+
+    fun close() {
         socketSession.close()
     }
 

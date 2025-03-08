@@ -6,8 +6,10 @@ import io.github.gdrfgdrf.cuteverification.web.commons.pojo.websocket.WsMessageT
 interface ISessionManager {
     fun get(id: String): Session?
     fun add(id: String, session: Session)
-    fun kick(id: String)
+    fun remove(id: String)
+
     fun auth(session: Session): Boolean
+    fun kick(id: String)
 
     fun send(id: String, type: WsMessageTypes)
 }

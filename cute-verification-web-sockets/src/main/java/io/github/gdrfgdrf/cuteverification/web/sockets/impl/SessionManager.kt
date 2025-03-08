@@ -28,10 +28,10 @@ class SessionManager : ISessionManager {
         logonSessions[id] = session
     }
 
-    override fun kick(id: String) {
+    override fun remove(id: String) {
         if (logonSessions.containsKey(id)) {
             val session = logonSessions[id]!!
-            session.tokenInvalid()
+            session.close()
         }
 
         logonSessions.remove(id)
@@ -39,6 +39,15 @@ class SessionManager : ISessionManager {
 
     override fun auth(session: Session): Boolean {
         return authenticator.auth(session.token)
+    }
+
+    override fun kick(id: String) {
+        if (logonSessions.containsKey(id)) {
+            val session = logonSessions[id]!!
+            session.tokenInvalid()
+        }
+
+        logonSessions.remove(id)
     }
 
     override fun send(id: String, type: WsMessageTypes) {
