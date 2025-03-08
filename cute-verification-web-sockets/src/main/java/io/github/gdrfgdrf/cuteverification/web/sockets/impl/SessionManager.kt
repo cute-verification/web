@@ -58,13 +58,7 @@ class SessionManager : ISessionManager {
             return
         }
 
-        val socketSession = session.socketSession
-
-        val message = WsMessage()
-        message.type = type
-
-        val content = Jsons.write(message)
-        socketSession.sendMessage(TextMessage(content))
+        WsMessage.of(type).write(session)
     }
 
 
