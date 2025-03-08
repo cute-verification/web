@@ -107,6 +107,8 @@ open class RestrictionService : ServiceImpl<RestrictionMapper, Restriction>(), I
         }
         restrictionTargetService.create(restriction.id!!, list)
 
+        sessionSender.restrictionCreated(id, restriction.id!!)
+
         recordService.createRestriction(restriction.id!!)
     }
 

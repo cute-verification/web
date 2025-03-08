@@ -42,7 +42,7 @@ class SessionSender : ISessionSender {
     }
 
     override fun restrictionCreated(id: String, restrictionId: String) {
-        send(id, WsMessageTypes.RESTRICTION_CREATED) {
+        broadcast(WsMessageTypes.RESTRICTION_CREATED) {
             put("restriction-id", restrictionId)
         }
     }
