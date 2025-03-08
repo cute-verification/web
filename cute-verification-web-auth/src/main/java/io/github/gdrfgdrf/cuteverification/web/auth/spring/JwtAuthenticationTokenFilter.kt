@@ -1,6 +1,6 @@
 package io.github.gdrfgdrf.cuteverification.web.auth.spring
 
-import io.github.gdrfgdrf.cuteverification.web.auth.Authenticator
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IAuthenticator
 import io.github.gdrfgdrf.cuteverification.web.interfaces.IJwtAuthenticationTokenFilter
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
@@ -11,12 +11,11 @@ import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource
 import org.springframework.stereotype.Component
-import org.springframework.web.filter.OncePerRequestFilter
 
 @Component
 class JwtAuthenticationTokenFilter : IJwtAuthenticationTokenFilter() {
     @Autowired
-    private lateinit var authenticator: Authenticator
+    private lateinit var authenticator: IAuthenticator
 
     override fun doFilterInternal(
         request: HttpServletRequest,

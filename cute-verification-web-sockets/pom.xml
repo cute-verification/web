@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>io.github.gdrfgdrf.cuteverification</groupId>
-            <artifactId>web-auth</artifactId>
+            <artifactId>web-interfaces</artifactId>
         </dependency>
     </dependencies>
 

@@ -1,20 +1,16 @@
 package io.github.gdrfgdrf.cuteverification.web.sockets.impl
 
-import io.github.gdrfgdrf.cuteverification.web.auth.Authenticator
-import io.github.gdrfgdrf.cuteverification.web.commons.json.Jsons
-import io.github.gdrfgdrf.cuteverification.web.interfaces.ISessionManager
 import io.github.gdrfgdrf.cuteverification.web.commons.pojo.websocket.Session
-import io.github.gdrfgdrf.cuteverification.web.commons.pojo.websocket.WsMessage
-import io.github.gdrfgdrf.cuteverification.web.commons.pojo.websocket.WsMessageTypes
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IAuthenticator
+import io.github.gdrfgdrf.cuteverification.web.interfaces.ISessionManager
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
-import org.springframework.web.socket.TextMessage
 import java.util.concurrent.ConcurrentHashMap
 
 @Component
 class SessionManager : ISessionManager {
     @Autowired
-    lateinit var authenticator: Authenticator
+    lateinit var authenticator: IAuthenticator
     private val logonSessions = ConcurrentHashMap<String, Session>()
 
     override fun get(id: String): Session? {

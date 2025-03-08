@@ -4,11 +4,12 @@ import io.github.gdrfgdrf.cuteverification.web.commons.jwt.Jwts
 import io.github.gdrfgdrf.cuteverification.web.interfaces.IAuthService
 import io.github.gdrfgdrf.cuteverification.web.interfaces.IRedisService
 import io.github.gdrfgdrf.cuteverification.web.interfaces.IAdministratorService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IAuthenticator
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
-class Authenticator {
+class Authenticator : IAuthenticator {
     @Autowired
     private lateinit var jwts: Jwts
     @Autowired
@@ -18,7 +19,7 @@ class Authenticator {
     @Autowired
     private lateinit var adminService: IAdministratorService
 
-    fun auth(token: String): Boolean {
+    override fun auth(token: String): Boolean {
         val decodedJwt = jwts.verify(token) ?: return false
         val usernameFromToken = decodedJwt.subject
         if (usernameFromToken.isNullOrBlank()) {
@@ -36,11 +37,11 @@ class Authenticator {
         return tokenAvailable
     }
 
-    fun id(username: String): String? {
+    override fun id(username: String): String? {
         return adminService.findIdByUsername(username)
     }
 
-    fun username(token: String): String? {
+    override fun username(token: String): String? {
         val decodedJwt = jwts.verify(token) ?: return null
         return decodedJwt.subject
     }
