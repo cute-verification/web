@@ -33,8 +33,8 @@ class Authenticator : IAuthenticator {
             return false
         }
 
-        val tokenAvailable = redisService.existsAccessTokenByName(usernameFromToken)
-        return tokenAvailable
+        val tokenFromRedis = redisService.findAccessTokenByName(administrator.username)
+        return tokenFromRedis == token
     }
 
     override fun id(username: String): String? {
