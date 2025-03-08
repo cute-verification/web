@@ -1,7 +1,6 @@
 package io.github.gdrfgdrf.cuteverification.web.interfaces
 
 import io.github.gdrfgdrf.cuteverification.web.commons.pojo.websocket.Session
-import io.github.gdrfgdrf.cuteverification.web.commons.pojo.websocket.WsMessageTypes
 
 interface ISessionManager {
     fun get(id: String): Session?
