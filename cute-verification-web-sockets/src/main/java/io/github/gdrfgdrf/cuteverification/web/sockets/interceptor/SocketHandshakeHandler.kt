@@ -7,15 +7,14 @@ import org.springframework.http.server.ServerHttpRequest
 import org.springframework.http.server.ServerHttpResponse
 import org.springframework.stereotype.Component
 import org.springframework.web.socket.WebSocketHandler
-import org.springframework.web.socket.server.HandshakeInterceptor
-import java.lang.Exception
+import org.springframework.web.socket.server.HandshakeHandler
 
 @Component
-class SocketHandshakeInterceptor : HandshakeInterceptor {
+class SocketHandshakeHandler : HandshakeHandler {
     @Autowired
     private lateinit var authenticator: IAuthenticator
 
-    override fun beforeHandshake(
+    override fun doHandshake(
         request: ServerHttpRequest,
         response: ServerHttpResponse,
         wsHandler: WebSocketHandler,
@@ -23,6 +22,7 @@ class SocketHandshakeInterceptor : HandshakeInterceptor {
     ): Boolean {
         val query = request.uri.query
         val params = HttpUtil.decodeParamMap(query, Charsets.UTF_8)
+
         if (!params.containsKey("token")) {
             return false
         }
@@ -46,14 +46,5 @@ class SocketHandshakeInterceptor : HandshakeInterceptor {
         attributes["token"] = token
 
         return true
-    }
-
-    override fun afterHandshake(
-        request: ServerHttpRequest,
-        response: ServerHttpResponse,
-        wsHandler: WebSocketHandler,
-        exception: Exception?
-    ) {
-
     }
 }

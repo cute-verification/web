@@ -14,7 +14,8 @@ import org.springframework.transaction.annotation.Transactional
 
 @Service
 open class AdministratorService : ServiceImpl<AdministratorMapper, Administrator>(), IAdministratorService {
-    private val passwordEncoder: BCryptPasswordEncoder = BCryptPasswordEncoder()
+    @Autowired
+    private lateinit var passwordEncoder: PasswordEncoder
     @Autowired
     private lateinit var recordService: IRecordService
 

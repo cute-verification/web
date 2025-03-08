@@ -8,10 +8,11 @@ import org.springframework.web.socket.CloseStatus
 import org.springframework.web.socket.TextMessage
 import org.springframework.web.socket.WebSocketMessage
 import org.springframework.web.socket.WebSocketSession
+import org.springframework.web.socket.handler.AbstractWebSocketHandler
 import org.springframework.web.socket.handler.TextWebSocketHandler
 
 @Component
-class SocketMessageHandler : TextWebSocketHandler() {
+class SocketMessageHandler : AbstractWebSocketHandler() {
     @Autowired
     private lateinit var sessionManager: ISessionManager
 
@@ -30,33 +31,9 @@ class SocketMessageHandler : TextWebSocketHandler() {
         sessionManager.add(id, session)
     }
 
-    override fun handleMessage(webSocketSession: WebSocketSession, message: WebSocketMessage<*>) {
-//        val attributes = webSocketSession.attributes
-//        val id = attributes["id"].toString()
-//        val session = sessionManager.get(id)
-//        if (session == null) {
-//            webSocketSession.close()
-//            return
-//        }
-//        val available = sessionManager.auth(session)
-//        if (!available) {
-//            session.close()
-//            return
-//        }
-
-
-        super.handleMessage(webSocketSession, message)
-    }
-
     override fun afterConnectionClosed(webSocketSession: WebSocketSession, status: CloseStatus) {
         val attributes = webSocketSession.attributes
         val id = attributes["id"].toString()
         sessionManager.remove(id)
     }
-
-    override fun handleTextMessage(session: WebSocketSession, message: TextMessage) {
-
-    }
-
-
 }
