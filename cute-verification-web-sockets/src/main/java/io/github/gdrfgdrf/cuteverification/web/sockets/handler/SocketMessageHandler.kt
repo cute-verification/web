@@ -51,7 +51,7 @@ class SocketMessageHandler : TextWebSocketHandler() {
     override fun afterConnectionClosed(webSocketSession: WebSocketSession, status: CloseStatus) {
         val attributes = webSocketSession.attributes
         val id = attributes["id"].toString()
-        sessionManager.kick(id)
+        sessionManager.remove(id)
     }
 
     override fun handleTextMessage(session: WebSocketSession, message: TextMessage) {
