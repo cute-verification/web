@@ -1,6 +1,7 @@
 package io.github.gdrfgdrf.cuteverification.web.auth.spring
 
 import io.github.gdrfgdrf.cuteverification.web.auth.Authenticator
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IJwtAuthenticationTokenFilter
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Component
 import org.springframework.web.filter.OncePerRequestFilter
 
 @Component
-class JwtAuthenticationTokenFilter : OncePerRequestFilter() {
+class JwtAuthenticationTokenFilter : IJwtAuthenticationTokenFilter() {
     @Autowired
     private lateinit var authenticator: Authenticator
 

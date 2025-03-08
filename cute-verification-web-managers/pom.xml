@@ -20,11 +20,6 @@
     <dependencies>
         <dependency>
             <groupId>io.github.gdrfgdrf.cuteverification</groupId>
-            <artifactId>web-services</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.github.gdrfgdrf.cuteverification</groupId>
             <artifactId>web-interfaces</artifactId>
         </dependency>
     </dependencies>

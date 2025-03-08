@@ -2,6 +2,7 @@ package io.github.gdrfgdrf.cuteverification.web.config
 
 import io.github.gdrfgdrf.cuteverification.web.auth.spring.JwtAuthenticationTokenFilter
 import io.github.gdrfgdrf.cuteverification.web.auth.spring.logout.CustomLogoutSuccessHandler
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IJwtAuthenticationTokenFilter
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -44,15 +45,12 @@ open class SecurityConfig {
     private lateinit var failureHandler: AuthenticationFailureHandler
     @Autowired
     private lateinit var logoutSuccessHandler: LogoutSuccessHandler
+    @Autowired
+    private lateinit var authenticationTokenFilter: IJwtAuthenticationTokenFilter
 
     @Bean
     open fun passwordEncoder(): PasswordEncoder {
         return BCryptPasswordEncoder()
-    }
-
-    @Bean
-    open fun authenticationTokenFilter(): OncePerRequestFilter {
-        return JwtAuthenticationTokenFilter()
     }
 
     @Bean
@@ -96,10 +94,10 @@ open class SecurityConfig {
             exceptionHandling.authenticationEntryPoint(entryPoint)
                 .accessDeniedHandler(accessDeniedHandler)
         }.addFilterBefore(
-            authenticationTokenFilter(),
+            authenticationTokenFilter,
             UsernamePasswordAuthenticationFilter::class.java
         ).addFilterBefore(
-            authenticationTokenFilter(),
+            authenticationTokenFilter,
             LogoutFilter::class.java,
         ).headers { headers ->
             headers.cacheControl { cacheControlConfig ->

@@ -20,16 +20,6 @@
     <dependencies>
         <dependency>
             <groupId>io.github.gdrfgdrf.cuteverification</groupId>
-            <artifactId>web-auth</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.github.gdrfgdrf.cuteverification</groupId>
-            <artifactId>web-interceptors</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.github.gdrfgdrf.cuteverification</groupId>
             <artifactId>web-sockets</artifactId>
         </dependency>
     </dependencies>

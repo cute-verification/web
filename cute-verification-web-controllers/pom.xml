@@ -32,11 +32,6 @@
             <groupId>io.github.gdrfgdrf.cuteverification</groupId>
             <artifactId>web-commons</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>io.github.gdrfgdrf.cuteverification</groupId>
-            <artifactId>web-managers</artifactId>
-        </dependency>
     </dependencies>
 
 </project>
