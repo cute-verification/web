@@ -27,7 +27,23 @@ class SessionSender : ISessionSender {
         send(id, type, null)
     }
 
-    override fun restrictionCreated(id: String, restrictionId: String) {
+    override fun broadcast(type: WsMessageTypes, provider: MutableMap<String, Any?>.() -> Unit) {
+        sessionManager.sessions().forEach { session ->
+            val id = session.id
+            send(id, type, provider)
+        }
+    }
 
+    override fun broadcast(type: WsMessageTypes) {
+        sessionManager.sessions().forEach { session ->
+            val id = session.id
+            send(id, type)
+        }
+    }
+
+    override fun restrictionCreated(id: String, restrictionId: String) {
+        send(id, WsMessageTypes.RESTRICTION_CREATED) {
+            put("restriction-id", restrictionId)
+        }
     }
 }
