@@ -41,8 +41,14 @@ class SessionSender : ISessionSender {
         }
     }
 
-    override fun restrictionCreated(id: String, restrictionId: String) {
+    override fun restrictionCreated(restrictionId: String) {
         broadcast(WsMessageTypes.RESTRICTION_CREATED) {
+            put("restriction-id", restrictionId)
+        }
+    }
+
+    override fun restrictionRestored(restrictionId: String) {
+        broadcast(WsMessageTypes.RESTRICTION_RESTORED) {
             put("restriction-id", restrictionId)
         }
     }

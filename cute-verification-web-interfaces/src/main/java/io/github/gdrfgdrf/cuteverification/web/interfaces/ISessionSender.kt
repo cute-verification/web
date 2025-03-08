@@ -9,5 +9,6 @@ interface ISessionSender {
     fun broadcast(type: WsMessageTypes, provider: (MutableMap<String, Any?>.() -> Unit))
     fun broadcast(type: WsMessageTypes)
 
-    fun restrictionCreated(id: String, restrictionId: String)
+    fun restrictionCreated(restrictionId: String)
+    fun restrictionRestored(restrictionId: String)
 }

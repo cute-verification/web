@@ -107,7 +107,7 @@ open class RestrictionService : ServiceImpl<RestrictionMapper, Restriction>(), I
         }
         restrictionTargetService.create(restriction.id!!, list)
 
-        sessionSender.restrictionCreated(id, restriction.id!!)
+        sessionSender.restrictionCreated(restriction.id!!)
 
         recordService.createRestriction(restriction.id!!)
     }
@@ -140,6 +140,8 @@ open class RestrictionService : ServiceImpl<RestrictionMapper, Restriction>(), I
         restriction.deleted = false
 
         updateById(restriction)
+
+        sessionSender.restrictionRestored(id)
 
         recordService.restoreRestriction(id)
     }
