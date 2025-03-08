@@ -74,7 +74,8 @@ open class SecurityConfig {
             authorize.requestMatchers("/api/v1/admin/login").permitAll()
                 .requestMatchers("/api/v1/admin/logout").permitAll()
                 .requestMatchers(HttpMethod.OPTIONS).permitAll()
-                .requestMatchers("/websocket").permitAll()
+                .requestMatchers("/websocket/").permitAll()
+                .requestMatchers("/websocket/no-sock-js").permitAll()
                 .anyRequest()
                 .authenticated()
         }.formLogin { formLogin ->
