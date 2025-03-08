@@ -12,7 +12,7 @@ class SessionSender : ISessionSender {
     @Autowired
     private lateinit var sessionManager: ISessionManager
 
-    override fun send(id: String, type: WsMessageTypes, provider: ((MutableMap<String, Any?>) -> Unit)?) {
+    override fun send(id: String, type: WsMessageTypes, provider: (MutableMap<String, Any?>.() -> Unit)?) {
         val session = sessionManager.get(id) ?: return
         val authResult = sessionManager.auth(session)
         if (!authResult) {
