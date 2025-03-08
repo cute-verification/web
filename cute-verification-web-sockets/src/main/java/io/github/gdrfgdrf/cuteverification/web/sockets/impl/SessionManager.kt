@@ -62,7 +62,7 @@ class SessionManager : ISessionManager {
     }
 
     override fun send(id: String, type: WsMessageTypes) {
-        send(id, type)
+        send(id, type, null)
     }
 
 
