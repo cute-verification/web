@@ -10,6 +10,8 @@ import io.github.gdrfgdrf.cuteverification.web.interfaces.IRecordService
 import io.github.gdrfgdrf.cuteverification.web.interfaces.IRestrictionService
 import io.github.gdrfgdrf.cuteverification.web.interfaces.IRestrictionTargetService
 import io.github.gdrfgdrf.cuteverification.web.interfaces.IAdministratorService
+import io.github.gdrfgdrf.cuteverification.web.interfaces.ISessionManager
+import io.github.gdrfgdrf.cuteverification.web.interfaces.ISessionSender
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Lazy
 import org.springframework.security.core.context.SecurityContextHolder
@@ -26,12 +28,14 @@ open class RestrictionService : ServiceImpl<RestrictionMapper, Restriction>(), I
     private lateinit var restrictionTargetService: IRestrictionTargetService
     @Autowired
     private lateinit var recordService: IRecordService
+    @Autowired
+    private lateinit var sessionSender: ISessionSender
 
     @Transactional
     override fun info(id: String): Restriction? {
         val restriction = ktQuery().eq(Restriction::id, id).one()
         if (restriction != null) {
-            autoMapper.mapperEntity<Restriction>(restriction)
+            autoMapper.mapperEntity(restriction)
         }
         return restriction
     }
@@ -40,7 +44,7 @@ open class RestrictionService : ServiceImpl<RestrictionMapper, Restriction>(), I
     override fun list(link: Boolean): List<Restriction> {
         val list = ktQuery().list()
         if (link) {
-            autoMapper.mapperEntityList<Restriction>(list)
+            autoMapper.mapperEntityList(list)
         }
         return list
     }

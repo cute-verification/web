@@ -10,7 +10,4 @@ interface ISessionManager {
 
     fun auth(session: Session): Boolean
     fun kick(id: String)
-
-    fun send(id: String, type: WsMessageTypes, provider: ((MutableMap<String, Any?>) -> Unit)?)
-    fun send(id: String, type: WsMessageTypes)
 }

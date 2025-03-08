@@ -50,21 +50,6 @@ class SessionManager : ISessionManager {
         logonSessions.remove(id)
     }
 
-    override fun send(id: String, type: WsMessageTypes, provider: ((MutableMap<String, Any?>) -> Unit)?) {
-        val session = get(id) ?: return
-        val authResult = auth(session)
-        if (!authResult) {
-            session.tokenInvalid()
-            return
-        }
-
-        WsMessage.of(type, provider).write(session)
-    }
-
-    override fun send(id: String, type: WsMessageTypes) {
-        send(id, type, null)
-    }
-
 
 
 
