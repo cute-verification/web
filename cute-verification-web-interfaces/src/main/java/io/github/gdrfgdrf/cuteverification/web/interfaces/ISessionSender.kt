@@ -11,4 +11,5 @@ interface ISessionSender {
 
     fun restrictionCreated(restrictionId: String)
     fun restrictionRestored(restrictionId: String)
+    fun restrictionStarted(restrictionIds: List<String>)
 }

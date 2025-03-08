@@ -52,4 +52,10 @@ class SessionSender : ISessionSender {
             put("restriction-id", restrictionId)
         }
     }
+
+    override fun restrictionStarted(restrictionIds: List<String>) {
+        broadcast(WsMessageTypes.RESTRICTION_STARTED) {
+            put("restriction-ids", restrictionIds)
+        }
+    }
 }

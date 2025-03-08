@@ -45,13 +45,11 @@ class CheckRestrictionTimer {
 
         val ids = newStartedRestrictions.stream()
             .map {
-                it.id
+                it.id!!
             }
             .toList()
 
-        sessionSender.broadcast(WsMessageTypes.RESTRICTION_STARTED) {
-            put("restriction-ids", ids)
-        }
+        sessionSender.restrictionStarted(ids)
     }
 
 }
