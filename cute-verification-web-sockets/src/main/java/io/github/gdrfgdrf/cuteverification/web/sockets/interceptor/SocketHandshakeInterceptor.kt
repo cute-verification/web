@@ -1,7 +1,7 @@
 package io.github.gdrfgdrf.cuteverification.web.sockets.interceptor
 
 import cn.hutool.http.HttpUtil
-import io.github.gdrfgdrf.cuteverification.web.auth.Authenticator
+import io.github.gdrfgdrf.cuteverification.web.interfaces.IAuthenticator
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.server.ServerHttpRequest
 import org.springframework.http.server.ServerHttpResponse
@@ -13,7 +13,7 @@ import java.lang.Exception
 @Component
 class SocketHandshakeInterceptor : HandshakeInterceptor {
     @Autowired
-    private lateinit var authenticator: Authenticator
+    private lateinit var authenticator: IAuthenticator
 
     override fun beforeHandshake(
         request: ServerHttpRequest,
