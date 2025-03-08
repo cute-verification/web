@@ -31,6 +31,7 @@
 		<module>cute-verification-web-advices</module>
 		<module>cute-verification-web-sockets</module>
 		<module>cute-verification-web-interfaces</module>
+		<module>cute-verification-web-timers</module>
 	</modules>
 
 	<url/>
@@ -132,6 +133,12 @@
 			<dependency>
 				<groupId>io.github.gdrfgdrf.cuteverification</groupId>
 				<artifactId>web-interfaces</artifactId>
+				<version>0.0.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.github.gdrfgdrf.cuteverification</groupId>
+				<artifactId>web-timers</artifactId>
 				<version>0.0.1</version>
 			</dependency>
 		</dependencies>

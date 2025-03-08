@@ -82,6 +82,11 @@
             <groupId>io.github.gdrfgdrf.cuteverification</groupId>
             <artifactId>web-interfaces</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>io.github.gdrfgdrf.cuteverification</groupId>
+            <artifactId>web-timers</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
