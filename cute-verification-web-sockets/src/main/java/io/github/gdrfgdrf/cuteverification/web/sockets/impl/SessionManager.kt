@@ -50,7 +50,7 @@ class SessionManager : ISessionManager {
         logonSessions.remove(id)
     }
 
-
-
-
+    override fun sessions(): List<Session> {
+        return logonSessions.values.toList()
+    }
 }

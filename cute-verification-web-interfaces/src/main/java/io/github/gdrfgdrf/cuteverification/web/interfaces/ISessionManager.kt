@@ -10,4 +10,6 @@ interface ISessionManager {
 
     fun auth(session: Session): Boolean
     fun kick(id: String)
+
+    fun sessions(): List<Session>
 }
